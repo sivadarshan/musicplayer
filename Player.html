@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="src/icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body >
+    <div class="main">
+
+        <!-- Logo -->
+        <p id="logo">  
+            <i class="fa fa-music" aria-hidden="true"></i>Music
+        </p>
+
+        <!-- Left Part - Img,Volume controller -->
+        <div class="left">
+            <img id="track_image">
+            <div class="volume">
+                <p id="volume_show">90</p>
+                <i class="fa fa-volume-up" aria-hidden="true" id="volume_icon" onclick="mute_sound()"></i>
+                <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">
+            </div>
+        </div>
+
+
+        <!-- Right Part -->
+        <div class="right">
+            <div class="show_song_no">
+                <p id="present">1</p>
+                <p>/</p>
+                <p id="total">5</p>
+            </div>
+
+            <!-- Song Title -->
+            <p id="title">title.mp3</p>
+            <p id="artist">Artist name</p>
+
+            <!-- Middle Part --> 
+            <div class="middle">
+
+                <!-- Previous song -->
+                <button onclick="previous_song()" id="pre">
+                    <i class="fa fa-step-backward" aria-hidden="true"></i>
+                </button>
+    
+                <!-- Play song -->
+                <button onclick="justplay()" id="play">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                </button>
+    
+                <!-- Next song -->
+                <button onclick="next_song()" id="next">
+                    <i class="fa fa-step-forward" aria-hidden="true"></i>
+                </button>
+            </div>
+             
+                <!-- Song Duration part -->
+                <div class="duration">
+                    <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+                </div>
+                <button id="auto" onclick="autoplay_switch()">
+                    AutoPlay
+                    <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+                </button>
+        </div>
+    </div>
+    <!-- Linking the JS file inside HTML page -->
+    <script src="script.js"></script>
+</body>
+</html>
